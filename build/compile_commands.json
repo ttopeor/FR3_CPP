@@ -1,13 +1,13 @@
 [
 {
   "directory": "/home/robot/Desktop/workspace/FR3_cpp/build",
-  "command": "/usr/bin/g++   -I../include -isystem /usr/local/include/eigen3  -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/fr3.dir/src/cartesian_pose_motion_test.cpp.o -c /home/robot/Desktop/workspace/FR3_cpp/src/cartesian_pose_motion_test.cpp",
+  "command": "/usr/bin/g++   -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include  -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/fr3.dir/src/cartesian_pose_motion_test.cpp.o -c /home/robot/Desktop/workspace/FR3_cpp/src/cartesian_pose_motion_test.cpp",
   "file": "/home/robot/Desktop/workspace/FR3_cpp/src/cartesian_pose_motion_test.cpp"
 },
 
 {
   "directory": "/home/robot/Desktop/workspace/FR3_cpp/build",
-  "command": "/usr/bin/g++   -I../include -isystem /usr/local/include/eigen3  -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/fr3.dir/src/examples_common.cpp.o -c /home/robot/Desktop/workspace/FR3_cpp/src/examples_common.cpp",
+  "command": "/usr/bin/g++   -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include  -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/fr3.dir/src/examples_common.cpp.o -c /home/robot/Desktop/workspace/FR3_cpp/src/examples_common.cpp",
   "file": "/home/robot/Desktop/workspace/FR3_cpp/src/examples_common.cpp"
 }
 ]

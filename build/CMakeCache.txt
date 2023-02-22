@@ -215,6 +215,30 @@ PocoFoundation_DIR:PATH=/usr/lib/cmake/Poco
 //The directory containing a CMake configuration file for Poco.
 Poco_DIR:PATH=/usr/lib/cmake/Poco
 
+//Path to a library.
+Python3_LIBRARY_DEBUG:FILEPATH=
+
+//Path to a library.
+Python3_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libpython3.8.so
+
+//Path to a file.
+_Python3_INCLUDE_DIR:PATH=/usr/include/python3.8
+
+//Path to a file.
+_Python3_NumPy_INCLUDE_DIR:PATH=/home/robot/.local/lib/python3.8/site-packages/numpy/core/include
+
+//The directory containing a CMake configuration file for gnuplot-iostream.
+gnuplot-iostream_DIR:PATH=gnuplot-iostream_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for gnuplot.
+gnuplot_DIR:PATH=gnuplot_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for matplotlib_cpp.
+matplotlib_cpp_DIR:PATH=/usr/local/lib/matplotlib_cpp/cmake
+
+//The directory containing a CMake configuration file for matplotlibcpp.
+matplotlibcpp_DIR:PATH=matplotlibcpp_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for ruckig.
 ruckig_DIR:PATH=/opt/ros/noetic/lib/x86_64-linux-gnu/cmake/ruckig
 
@@ -352,8 +376,31 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Python3
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/home/robot/.local/lib/python3.8/site-packages/numpy/core/include][cfound components: NumPy Interpreter Development ][v3.8.10()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: Python3_LIBRARY_DEBUG
+Python3_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Python3_LIBRARY_RELEASE
+Python3_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //Result of TRY_COMPILE
 THREADS_HAVE_PTHREAD_ARG:INTERNAL=TRUE
+//ADVANCED property for variable: _Python3_DEVELOPMENT_SIGNATURE
+_Python3_DEVELOPMENT_SIGNATURE-ADVANCED:INTERNAL=1
+_Python3_DEVELOPMENT_SIGNATURE:INTERNAL=4a4167209e8a167eff1f1b37da22ba0f
+//ADVANCED property for variable: _Python3_EXECUTABLE
+_Python3_EXECUTABLE-ADVANCED:INTERNAL=1
+_Python3_EXECUTABLE:INTERNAL=/usr/bin/python3.8
+//ADVANCED property for variable: _Python3_INCLUDE_DIR
+_Python3_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: _Python3_INTERPRETER_SIGNATURE
+_Python3_INTERPRETER_SIGNATURE-ADVANCED:INTERNAL=1
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=60fbcba4d3ec42cb22d9b25de2c7c03a
+//ADVANCED property for variable: _Python3_LIBRARY_RELEASE
+_Python3_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+_Python3_LIBRARY_RELEASE:INTERNAL=/usr/lib/x86_64-linux-gnu/libpython3.8.so
+_Python3_NUMPY_SIGNATURE:INTERNAL=d4c2085e6160485e886b3c0985f5bfe4
+//ADVANCED property for variable: _Python3_NumPy_INCLUDE_DIR
+_Python3_NumPy_INCLUDE_DIR-ADVANCED:INTERNAL=1
 
