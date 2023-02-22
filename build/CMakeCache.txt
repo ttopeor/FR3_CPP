@@ -215,6 +215,9 @@ PocoFoundation_DIR:PATH=/usr/lib/cmake/Poco
 //The directory containing a CMake configuration file for Poco.
 Poco_DIR:PATH=/usr/lib/cmake/Poco
 
+//The directory containing a CMake configuration file for ruckig.
+ruckig_DIR:PATH=/opt/ros/noetic/lib/x86_64-linux-gnu/cmake/ruckig
+
 
 ########################
 # INTERNAL cache entries
