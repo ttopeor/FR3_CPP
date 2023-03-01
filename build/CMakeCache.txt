@@ -209,6 +209,26 @@ FR3_CPP_SOURCE_DIR:STATIC=/home/robot/Desktop/workspace/FR3_cpp
 //The directory containing a CMake configuration file for Franka.
 Franka_DIR:PATH=/usr/local/lib/cmake/Franka
 
+//Path to a library.
+GSL_CBLAS_LIBRARY:FILEPATH=/usr/local/lib/libgslcblas.so
+
+//Path to a library.
+GSL_CBLAS_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libgslcblas.so
+
+//Path to a file.
+GSL_INCLUDE_DIR:PATH=/usr/local/include
+
+//Path to a library.
+GSL_LIBRARY:FILEPATH=/usr/local/lib/libgsl.so
+
+//Path to a library.
+GSL_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libgsl.so
+
+GSL_ROOT_DIR:STRING=/usr/local
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
 //The directory containing a CMake configuration file for PocoFoundation.
 PocoFoundation_DIR:PATH=/usr/lib/cmake/Poco
 
@@ -233,11 +253,23 @@ gnuplot-iostream_DIR:PATH=gnuplot-iostream_DIR-NOTFOUND
 //The directory containing a CMake configuration file for gnuplot.
 gnuplot_DIR:PATH=gnuplot_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for gsl.
+gsl_DIR:PATH=gsl_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for matplotlib_cpp.
 matplotlib_cpp_DIR:PATH=/usr/local/lib/matplotlib_cpp/cmake
 
 //The directory containing a CMake configuration file for matplotlibcpp.
 matplotlibcpp_DIR:PATH=matplotlibcpp_DIR-NOTFOUND
+
+//Path to a library.
+pkgcfg_lib_GSL_gsl:FILEPATH=/usr/local/lib/libgsl.so
+
+//Path to a library.
+pkgcfg_lib_GSL_gslcblas:FILEPATH=/usr/local/lib/libgslcblas.so
+
+//Path to a library.
+pkgcfg_lib_GSL_m:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
 
 //The directory containing a CMake configuration file for ruckig.
 ruckig_DIR:PATH=/opt/ros/noetic/lib/x86_64-linux-gnu/cmake/ruckig
@@ -376,10 +408,65 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding GSL
+FIND_PACKAGE_MESSAGE_DETAILS_GSL:INTERNAL=[/usr/local/include][/usr/local/lib/libgsl.so][/usr/local/lib/libgslcblas.so][v2.7.1()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/home/robot/.local/lib/python3.8/site-packages/numpy/core/include][cfound components: NumPy Interpreter Development ][v3.8.10()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: GSL_CBLAS_LIBRARY
+GSL_CBLAS_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GSL_CBLAS_LIBRARY_DEBUG
+GSL_CBLAS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+GSL_CFLAGS:INTERNAL=-I/usr/local/include
+GSL_CFLAGS_I:INTERNAL=
+GSL_CFLAGS_OTHER:INTERNAL=
+GSL_FOUND:INTERNAL=1
+GSL_INCLUDEDIR:INTERNAL=/usr/local/include
+//ADVANCED property for variable: GSL_INCLUDE_DIR
+GSL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+GSL_INCLUDE_DIRS:INTERNAL=/usr/local/include
+GSL_LDFLAGS:INTERNAL=-L/usr/local/lib;-lgsl;-lgslcblas;-lm
+GSL_LDFLAGS_OTHER:INTERNAL=
+GSL_LIBDIR:INTERNAL=/usr/local/lib
+GSL_LIBRARIES:INTERNAL=gsl;gslcblas;m
+//ADVANCED property for variable: GSL_LIBRARY
+GSL_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GSL_LIBRARY_DEBUG
+GSL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+GSL_LIBRARY_DIRS:INTERNAL=/usr/local/lib
+GSL_LIBS:INTERNAL=
+GSL_LIBS_L:INTERNAL=
+GSL_LIBS_OTHER:INTERNAL=
+GSL_LIBS_PATHS:INTERNAL=
+GSL_MODULE_NAME:INTERNAL=gsl
+GSL_PREFIX:INTERNAL=/usr/local
+//ADVANCED property for variable: GSL_ROOT_DIR
+GSL_ROOT_DIR-ADVANCED:INTERNAL=1
+GSL_STATIC_CFLAGS:INTERNAL=-I/usr/local/include
+GSL_STATIC_CFLAGS_I:INTERNAL=
+GSL_STATIC_CFLAGS_OTHER:INTERNAL=
+GSL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include
+GSL_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib;-lgsl;-lgslcblas;-lm
+GSL_STATIC_LDFLAGS_OTHER:INTERNAL=
+GSL_STATIC_LIBDIR:INTERNAL=
+GSL_STATIC_LIBRARIES:INTERNAL=gsl;gslcblas;m
+GSL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib
+GSL_STATIC_LIBS:INTERNAL=
+GSL_STATIC_LIBS_L:INTERNAL=
+GSL_STATIC_LIBS_OTHER:INTERNAL=
+GSL_STATIC_LIBS_PATHS:INTERNAL=
+//ADVANCED property for variable: GSL_VERSION
+GSL_VERSION-ADVANCED:INTERNAL=1
+GSL_VERSION:INTERNAL=2.7.1
+GSL_gsl_INCLUDEDIR:INTERNAL=
+GSL_gsl_LIBDIR:INTERNAL=
+GSL_gsl_PREFIX:INTERNAL=
+GSL_gsl_VERSION:INTERNAL=
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Python3_LIBRARY_DEBUG
 Python3_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Python3_LIBRARY_RELEASE
@@ -403,4 +490,13 @@ _Python3_LIBRARY_RELEASE:INTERNAL=/usr/lib/x86_64-linux-gnu/libpython3.8.so
 _Python3_NUMPY_SIGNATURE:INTERNAL=d4c2085e6160485e886b3c0985f5bfe4
 //ADVANCED property for variable: _Python3_NumPy_INCLUDE_DIR
 _Python3_NumPy_INCLUDE_DIR-ADVANCED:INTERNAL=1
+__pkg_config_arguments_GSL:INTERNAL=QUIET;gsl
+__pkg_config_checked_GSL:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GSL_gsl
+pkgcfg_lib_GSL_gsl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GSL_gslcblas
+pkgcfg_lib_GSL_gslcblas-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_GSL_m
+pkgcfg_lib_GSL_m-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/usr/local/lib
 

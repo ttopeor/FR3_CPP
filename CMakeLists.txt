@@ -15,7 +15,9 @@ find_package(Franka REQUIRED)
 find_package(Eigen3 REQUIRED )
 find_package(matplotlib_cpp REQUIRED)
 find_package(Poco REQUIRED COMPONENTS Foundation)
+find_package(GSL REQUIRED)
 
 add_executable(fr3 ${SOURCE_FILE})
 
-target_link_libraries(fr3 PRIVATE Franka::Franka Eigen3::Eigen matplotlib_cpp::matplotlib_cpp) 
+
+target_link_libraries(fr3 PRIVATE Franka::Franka Eigen3::Eigen matplotlib_cpp::matplotlib_cpp GSL::gsl) 

@@ -61,8 +61,22 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_fr3: phony || CMakeFiles/fr3.dir
 
-build CMakeFiles/fr3.dir/src/cartesian_pose_motion_test.cpp.o: CXX_COMPILER__fr3 ../src/cartesian_pose_motion_test.cpp || cmake_object_order_depends_target_fr3
-  DEP_FILE = CMakeFiles/fr3.dir/src/cartesian_pose_motion_test.cpp.o.d
+build CMakeFiles/fr3.dir/src/Kalman.cpp.o: CXX_COMPILER__fr3 ../src/Kalman.cpp || cmake_object_order_depends_target_fr3
+  DEP_FILE = CMakeFiles/fr3.dir/src/Kalman.cpp.o.d
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
+  INCLUDES = -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include
+  OBJECT_DIR = CMakeFiles/fr3.dir
+  OBJECT_FILE_DIR = CMakeFiles/fr3.dir/src
+
+build CMakeFiles/fr3.dir/src/Motion_plan.cpp.o: CXX_COMPILER__fr3 ../src/Motion_plan.cpp || cmake_object_order_depends_target_fr3
+  DEP_FILE = CMakeFiles/fr3.dir/src/Motion_plan.cpp.o.d
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
+  INCLUDES = -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include
+  OBJECT_DIR = CMakeFiles/fr3.dir
+  OBJECT_FILE_DIR = CMakeFiles/fr3.dir/src
+
+build CMakeFiles/fr3.dir/src/PD_controller.cpp.o: CXX_COMPILER__fr3 ../src/PD_controller.cpp || cmake_object_order_depends_target_fr3
+  DEP_FILE = CMakeFiles/fr3.dir/src/PD_controller.cpp.o.d
   FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include
   OBJECT_DIR = CMakeFiles/fr3.dir
@@ -70,6 +84,27 @@ build CMakeFiles/fr3.dir/src/cartesian_pose_motion_test.cpp.o: CXX_COMPILER__fr3
 
 build CMakeFiles/fr3.dir/src/examples_common.cpp.o: CXX_COMPILER__fr3 ../src/examples_common.cpp || cmake_object_order_depends_target_fr3
   DEP_FILE = CMakeFiles/fr3.dir/src/examples_common.cpp.o.d
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
+  INCLUDES = -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include
+  OBJECT_DIR = CMakeFiles/fr3.dir
+  OBJECT_FILE_DIR = CMakeFiles/fr3.dir/src
+
+build CMakeFiles/fr3.dir/src/kinematics.cpp.o: CXX_COMPILER__fr3 ../src/kinematics.cpp || cmake_object_order_depends_target_fr3
+  DEP_FILE = CMakeFiles/fr3.dir/src/kinematics.cpp.o.d
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
+  INCLUDES = -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include
+  OBJECT_DIR = CMakeFiles/fr3.dir
+  OBJECT_FILE_DIR = CMakeFiles/fr3.dir/src
+
+build CMakeFiles/fr3.dir/src/main.cpp.o: CXX_COMPILER__fr3 ../src/main.cpp || cmake_object_order_depends_target_fr3
+  DEP_FILE = CMakeFiles/fr3.dir/src/main.cpp.o.d
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
+  INCLUDES = -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include
+  OBJECT_DIR = CMakeFiles/fr3.dir
+  OBJECT_FILE_DIR = CMakeFiles/fr3.dir/src
+
+build CMakeFiles/fr3.dir/src/math_tools.cpp.o: CXX_COMPILER__fr3 ../src/math_tools.cpp || cmake_object_order_depends_target_fr3
+  DEP_FILE = CMakeFiles/fr3.dir/src/math_tools.cpp.o.d
   FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I../include -isystem /usr/local/include/eigen3 -isystem /usr/include/python3.8 -isystem /home/robot/.local/lib/python3.8/site-packages/numpy/core/include
   OBJECT_DIR = CMakeFiles/fr3.dir
@@ -83,9 +118,9 @@ build CMakeFiles/fr3.dir/src/examples_common.cpp.o: CXX_COMPILER__fr3 ../src/exa
 #############################################
 # Link the executable fr3
 
-build fr3: CXX_EXECUTABLE_LINKER__fr3 CMakeFiles/fr3.dir/src/cartesian_pose_motion_test.cpp.o CMakeFiles/fr3.dir/src/examples_common.cpp.o | /usr/local/lib/libfranka.so.0.10.0 /usr/lib/x86_64-linux-gnu/libpython3.8.so
+build fr3: CXX_EXECUTABLE_LINKER__fr3 CMakeFiles/fr3.dir/src/Kalman.cpp.o CMakeFiles/fr3.dir/src/Motion_plan.cpp.o CMakeFiles/fr3.dir/src/PD_controller.cpp.o CMakeFiles/fr3.dir/src/examples_common.cpp.o CMakeFiles/fr3.dir/src/kinematics.cpp.o CMakeFiles/fr3.dir/src/main.cpp.o CMakeFiles/fr3.dir/src/math_tools.cpp.o | /usr/local/lib/libfranka.so.0.10.0 /usr/local/lib/libgsl.so /usr/lib/x86_64-linux-gnu/libpython3.8.so /usr/local/lib/libgslcblas.so
   FLAGS = -O3 -DNDEBUG
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libfranka.so.0.10.0  /usr/lib/x86_64-linux-gnu/libpython3.8.so
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  /usr/local/lib/libfranka.so.0.10.0  /usr/local/lib/libgsl.so  /usr/lib/x86_64-linux-gnu/libpython3.8.so  /usr/local/lib/libgslcblas.so
   OBJECT_DIR = CMakeFiles/fr3.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -117,14 +152,14 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/lib/cmake/Poco/PocoConfig.cmake /usr/lib/cmake/Poco/PocoConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationConfig.cmake /usr/lib/cmake/Poco/PocoFoundationConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationTargets-none.cmake /usr/lib/cmake/Poco/PocoFoundationTargets.cmake /usr/local/lib/cmake/Franka/FrankaConfig.cmake /usr/local/lib/cmake/Franka/FrankaConfigVersion.cmake /usr/local/lib/cmake/Franka/FrankaTargets-noconfig.cmake /usr/local/lib/cmake/Franka/FrankaTargets.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppConfig.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppTargets.cmake /usr/local/share/eigen3/cmake/Eigen3Config.cmake /usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake /usr/local/share/eigen3/cmake/Eigen3Targets.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPython/Support.cmake /usr/share/cmake-3.16/Modules/FindPython3.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/lib/cmake/Poco/PocoConfig.cmake /usr/lib/cmake/Poco/PocoConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationConfig.cmake /usr/lib/cmake/Poco/PocoFoundationConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationTargets-none.cmake /usr/lib/cmake/Poco/PocoFoundationTargets.cmake /usr/local/lib/cmake/Franka/FrankaConfig.cmake /usr/local/lib/cmake/Franka/FrankaConfigVersion.cmake /usr/local/lib/cmake/Franka/FrankaTargets-noconfig.cmake /usr/local/lib/cmake/Franka/FrankaTargets.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppConfig.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppTargets.cmake /usr/local/share/eigen3/cmake/Eigen3Config.cmake /usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake /usr/local/share/eigen3/cmake/Eigen3Targets.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindGSL.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPython/Support.cmake /usr/share/cmake-3.16/Modules/FindPython3.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /usr/lib/cmake/Poco/PocoConfig.cmake /usr/lib/cmake/Poco/PocoConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationConfig.cmake /usr/lib/cmake/Poco/PocoFoundationConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationTargets-none.cmake /usr/lib/cmake/Poco/PocoFoundationTargets.cmake /usr/local/lib/cmake/Franka/FrankaConfig.cmake /usr/local/lib/cmake/Franka/FrankaConfigVersion.cmake /usr/local/lib/cmake/Franka/FrankaTargets-noconfig.cmake /usr/local/lib/cmake/Franka/FrankaTargets.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppConfig.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppTargets.cmake /usr/local/share/eigen3/cmake/Eigen3Config.cmake /usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake /usr/local/share/eigen3/cmake/Eigen3Targets.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPython/Support.cmake /usr/share/cmake-3.16/Modules/FindPython3.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /usr/lib/cmake/Poco/PocoConfig.cmake /usr/lib/cmake/Poco/PocoConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationConfig.cmake /usr/lib/cmake/Poco/PocoFoundationConfigVersion.cmake /usr/lib/cmake/Poco/PocoFoundationTargets-none.cmake /usr/lib/cmake/Poco/PocoFoundationTargets.cmake /usr/local/lib/cmake/Franka/FrankaConfig.cmake /usr/local/lib/cmake/Franka/FrankaConfigVersion.cmake /usr/local/lib/cmake/Franka/FrankaTargets-noconfig.cmake /usr/local/lib/cmake/Franka/FrankaTargets.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppConfig.cmake /usr/local/lib/matplotlib_cpp/cmake/matplotlib_cppTargets.cmake /usr/local/share/eigen3/cmake/Eigen3Config.cmake /usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake /usr/local/share/eigen3/cmake/Eigen3Targets.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindGSL.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPython/Support.cmake /usr/share/cmake-3.16/Modules/FindPython3.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
 
 
 #############################################
