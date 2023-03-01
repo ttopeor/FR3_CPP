@@ -6,6 +6,7 @@
 
 #include <franka/exception.h>
 #include <franka/robot.h>
+#include <Eigen/Dense>
 
 #include "examples_common.h"
 
@@ -56,7 +57,6 @@ int main()
   const std::array<double, 7> K_P{{200.0, 200.0, 200.0, 200.0, 200.0, 200.0, 200.0}};
   // NOLINTNEXTLINE(readability-identifier-naming)
   const std::array<double, 7> K_D{{10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0}};
-  const double max_acceleration{1.0};
 
   Controller controller(filter_size, K_P, K_D);
 
@@ -101,21 +101,31 @@ int main()
     robot.control([&](const franka::RobotState &robot_state, franka::Duration) -> franka::Torques
                   { return controller.step(robot_state); },
 
-                  [&time, &motion, &index, &initial_pose](const franka::RobotState &robot_state,
-                                                          franka::Duration period) -> franka::CartesianPose
+                  [&](const franka::RobotState &robot_state, franka::Duration period) -> franka::JointPositions
                   {
- 
-      time += period.toSec();                                    
-      std::array<double, 16> new_pose;
-      new_pose = motion[index];
-      index = index + 1;
-      std::cout << time << " "<< new_pose[12]<< " "<< new_pose[14] << std::endl;
-      if (index >= motion.size()) {
-        std::cout << std::endl << "Finished motion, shutting down example" << std::endl;
-        printArray16(initial_pose);
-        return franka::MotionFinished(new_pose);
-      }
-      return new_pose; });
+                    time += period.toSec();
+                    std::array<double, 16> new_pose;
+                    std::array<double, 7> last_q;
+                    new_pose = motion[index];
+                    last_q = robot_state.q;
+
+                    index = index + 1;
+                    std::cout << time << " " << new_pose[12] << " " << new_pose[14] << std::endl;
+
+                    Eigen::Matrix<double, 7, 1> last_q_mat;
+                    last_q_mat = Eigen::Map<Eigen::Matrix<double, 7, 1>>(last_q.data());
+                    Eigen::Matrix<double, 6, 1> new_pose_mat;
+                    // todo() check new_pose how to convert to new_pose_mat implement in motion plan
+                    Eigen::Matrix<double, 7, 1> new_angle = Kinematics::inverse(const Eigen::Matrix<double, 6, 1> &x_target, last_q_mat);
+
+                    if (index >= motion.size())
+                    {
+                      std::cout << std::endl
+                                << "Finished motion, shutting down example" << std::endl;
+                      return franka::MotionFinished(new_angle);
+                    }
+                    return new_angle;
+                  });
   }
   catch (const franka::Exception &e)
   {
